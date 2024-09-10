@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hackthon</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>Dynamic Resume builder by Nisha Nazar</h1>
+    <form id="resumeForm">
+        
+      <fieldset>
+        <legend><h2>Personal Information</h2></legend>
+        <img src="images (1).png" alt="profile-pic" class="profile-pic" />
+        <label>Name:</label>
+        <input type="text" id="name"name="name"placeholder="name" />
+        <br />
+        <br />
+        <label>Email:</label>
+        <input type="email"id="email"name="email"required placeholder="email"/>
+        <br />
+        <br />
+        <label>Phone:</label>
+        <input type="tel" id="phone" name="phone" required placeholder="phone Number"/>
+        <br />
+        <br />
+        <fieldset>
+        <legend>Education</legend>
+        <textarea id="education" name="education" rows="3" required></textarea>
+        </fieldset>
+        <br/>
+        <fieldset>
+        <legend>Work Experience</legend>
+        <textarea id="experience" name="Experience" rows="3"required></textarea>
+        </fieldset>
+        <br />
+      <fieldset>
+        <legend>Skills</legend>
+       <textarea id="skills" name="Skills" rows="3" required></textarea>
+      </fieldset>
+        <button type="submit">Generate Resume Below</button>
+     </form>
+
+     <div id="resumeOutput">
+        <!-- Resume will be generative below -->
+     </div>
+
+<script src="index.js"></script>
+   
+  </body>
+</html>
