@@ -1,52 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hackthon</title>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <h1>Dynamic Resume builder by Nisha Nazar</h1>
-    <form id="resumeForm">
-        
-      <fieldset>
-        <legend><h2>Personal Information</h2></legend>
-        <img src="images (1).png" alt="profile-pic" class="profile-pic" />
-        <label>Name:</label>
-        <input type="text" id="name"name="name"placeholder="name" />
-        <br />
-        <br />
-        <label>Email:</label>
-        <input type="email"id="email"name="email"required placeholder="email"/>
-        <br />
-        <br />
-        <label>Phone:</label>
-        <input type="tel" id="phone" name="phone" required placeholder="phone Number"/>
-        <br />
-        <br />
-        <fieldset>
-        <legend>Education</legend>
-        <textarea id="education" name="education" rows="3" required></textarea>
-        </fieldset>
-        <br/>
-        <fieldset>
-        <legend>Work Experience</legend>
-        <textarea id="experience" name="Experience" rows="3"required></textarea>
-        </fieldset>
-        <br />
-      <fieldset>
-        <legend>Skills</legend>
-       <textarea id="skills" name="Skills" rows="3" required></textarea>
-      </fieldset>
-        <button type="submit">Generate Resume Below</button>
-     </form>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Resume Builder</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <h1>Dynamic Resume Builder</h1>
 
-     <div id="resumeOutput">
-        <!-- Resume will be generative below -->
-     </div>
+  <!-- Form to capture user input -->
+  <form id="resumeForm">
+    <h3>Personal Information</h3>
+    <input type="text" id="name" placeholder="Full Name" required />
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="text" id="address" placeholder="Address" />
+    <input type="text" id="phone" placeholder="Phone Number" required />
+    <input type="file" id="profilePicture" />
 
+    <h3>Education</h3>
+    <textarea id="education" placeholder="Enter your education details" required></textarea>
+
+    <h3>Work Experience</h3>
+    <textarea id="workExperience" placeholder="Enter your work experience" required></textarea>
+
+    <h3>Skills</h3>
+    <textarea id="skills" placeholder="Enter your skills" required></textarea>
+
+    <button type="submit">Generate Resume</button>
+  </form>
+   <!-- Display Resume -->
+   <div id="resumeOutput"></div>
 <script src="index.js"></script>
-   
-  </body>
+</body>
 </html>

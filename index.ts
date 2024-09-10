@@ -1,59 +1,65 @@
-//listing element
 document
   .getElementById("resumeForm")
   ?.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    // type assertion
     const nameElement = document.getElementById("name") as HTMLInputElement;
     const emailElement = document.getElementById("email") as HTMLInputElement;
+    const addressElement = document.getElementById(
+      "address"
+    ) as HTMLInputElement;
     const phoneElement = document.getElementById("phone") as HTMLInputElement;
     const educationElement = document.getElementById(
       "education"
     ) as HTMLInputElement;
-    const experienceElement = document.getElementById(
-      "workexperience"
+    const workExperienceElement = document.getElementById(
+      "workExperience"
     ) as HTMLInputElement;
-    const skillElement = document.getElementById("skills") as HTMLInputElement;
+    const skillsElement = document.getElementById("skills") as HTMLInputElement;
+    const profilePictureElement = document.getElementById(
+      "profilePicture"
+    ) as HTMLInputElement;
 
     if (
       nameElement &&
       emailElement &&
       phoneElement &&
       educationElement &&
-      experienceElement &&
-      skillElement
+      workExperienceElement &&
+      skillsElement
     ) {
       const name = nameElement.value;
       const email = emailElement.value;
+      const address = addressElement.value;
       const phone = phoneElement.value;
       const education = educationElement.value;
-      const experience = experienceElement.value;
-      const skills = skillElement.value;
+      const workExperience = workExperienceElement.value;
+      const skills = skillsElement.value;
+      const profilePicture = profilePictureElement.files
+        ? URL.createObjectURL(profilePictureElement.files[0])
+        : "";
 
-      // Create resume output
+      // Create dynamic resume output
       const resumeOutput = `
-    <h2>Resume</h2>
-    <p><strong>Name:</strong> ${name} </p>
-     <p><strong>Email:</strong> ${email} </p>
-      <p><strong>Contact Number:</strong> ${phone} </p>
-      
-      <h3 >Education</h3>
-       <p>${education}</p>
+          <h2>${name}'s Resume</h2>
+          <img src="${profilePicture}" alt="Profile Picture" style="width: 150px; height: 150px;" />
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Address:</strong> ${address}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
 
-        <h3>Work Experience:</h3>
-        <p>${experience}</p>
+          <h3>Education</h3>
+          <p>${education}</p>
 
-        <h3>Skills:</h3>
-       <p>${skills}</p>`;
+          <h3>Work Experience</h3>
+          <p>${workExperience}</p>
+
+          <h3>Skills</h3>
+          <p>${skills}</p>
+      `;
 
       const resumeOutputElement = document.getElementById("resumeOutput");
       if (resumeOutputElement) {
         resumeOutputElement.innerHTML = resumeOutput;
-      } else {
-        console.error("The resume output elements are missing");
       }
-    } else {
-      console.error("One or more output elements are missing");
     }
   });
